@@ -2,75 +2,140 @@
 "Developed a Book Recommendation System using collaborative filtering and content-based algorithms to suggest books based on user preferences and ratings."
 Here's a sample README file for your **Book Recommendation System** project:
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
 
-## Introduction
-The **Book Recommendation System** provides personalized book suggestions based on user preferences. Using both collaborative filtering and content-based algorithms, the system recommends books based on similar user ratings and book content.
+<img src="demo/6.jpeg" alt="workflow" width="70%">
 
-## Features
-- Collaborative filtering to recommend books based on user-item interaction.
-- Content-based recommendation using book metadata such as title, author, genre, and tags.
-- Scalable to handle a large number of users and books.
-- User-friendly interface for entering book preferences and viewing recommendations.
+Recommendation systems are becoming increasingly important in today’s extremely busy world. People are always short on time with the myriad tasks they need to accomplish in the limited 24 hours. Therefore, the recommendation systems are important as they help them make the right choices, without having to expend their cognitive resources.
 
-## Technologies Used
-- **Python**: Core programming language for data processing and machine learning.
-- **Pandas & NumPy**: For data manipulation and preprocessing.
-- **Scikit-learn**: For implementing machine learning algorithms.
-- **Streamlit**: For building the web interface (optional, if web-based).
-- **Pickle**: For saving and loading machine learning models.
-- **Cosine Similarity**: For calculating similarities between users/books.
-  
-## Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/book-recommendation-system.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd book-recommendation-system
-   ```
-3. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+The purpose of a recommendation system basically is to search for content that would be interesting to an individual. Moreover, it involves a number of factors to create personalised lists of useful and interesting content specific to each user/individual. Recommendation systems are Artificial Intelligence based algorithms that skim through all possible options and create a customized list of items that are interesting and relevant to an individual. These results are based on their profile, search/browsing history, what other people with similar traits/demographics are watching, and how likely are you to watch those movies. This is achieved through predictive modeling and heuristics with the data available.
 
-## Usage
-1. Prepare the dataset by loading the book and user ratings files.
-2. Run the recommendation system:
-   ```bash
-   python recommendation_system.py
-   ```
-3. If using a web interface, launch the Streamlit app:
-   ```bash
-   streamlit run app.py
-   ```
-4. Enter your book preferences and get personalized recommendations!
+# Types of Recommendation System :
 
-## Project Structure
+### 1 ) Content Based :
+
+- Content-based systems, which use characteristic information and takes item attriubutes into consideration .
+
+- Twitter , Youtube .
+
+- Which music you are listening , what singer are you watching . Form embeddings for the features .
+	
+- User specific actions or similar items reccomendation .
+	
+- It will create a vector of it .
+	
+- These systems make recommendations using a user's item and profile features. They hypothesize that if a user was interested in an item in the past, they will once again be interested in it in the future
+	
+- One issue that arises is making obvious recommendations because of excessive specialization (user A is only interested in categories B, C, and D, and the system is not able to recommend items outside those categories, even though they could be interesting to them).
+
+### 2 ) Collaborative Based :
+		
+- Collaborative filtering systems, which are based on user-item interactions.
+	
+- Clusters of users with same ratings , similar users .
+	
+- Book recommendation , so use cluster mechanism .
+	
+- We take only one parameter , ratings or comments .
+	
+- In short, collaborative filtering systems are based on the assumption that if a user likes item A and another user likes the same item A as well as another item, item B, the first user could also be interested in the second item . 
+	
+- Issues are :
+
+	- User-Item nXn matrix , so computationally expensive .
+
+	- Only famous items will get reccomended .
+
+	- New items might not get reccomended at all .   
+
+### 3 ) Hybrid Based :
+	
+- Hybrid systems, which combine both types of information with the aim of avoiding problems that are generated when working with just one kind.
+
+- Combination of both and used now a days .
+
+- Uses : word2vec , embedding .           
+
+# About this project:
+
+This is a streamlit web application that can recommend various kinds of similar books based on an user interest.
+here is a demo,
+
+* [Click here to run it live on server](https://book-recommendation45.herokuapp.com/)
+
+
+# Demo:
+
+<img src="demo/1.png" alt="workflow" width="70%">
+
+<img src="demo/2.png" alt="workflow" width="70%">
+
+<img src="demo/3.png" alt="workflow" width="70%">
+
+
+# Dataset has been used:
+
+* [Dataset link](https://www.kaggle.com/ra4u12/bookrecommendation)
+
+# Concept used to build the model.pkl file : NearestNeighbors
+
+1 . Load the data
+	
+2 . Initialise the value of k
+
+3 . For getting the predicted class, iterate from 1 to total number of training data points
+
+4 . Calculate the distance between test data and each row of training data. Here we will use Euclidean distance as our distance metric since it’s the most popular method. 
+
+5 . Sort the calculated distances in ascending order based on distance values
+	
+6 . Get top k rows from the sorted array
+
+# How to run?
+### STEPS:
+
+Clone the repository
+
+```bash
+https://github.com/entbappy/Books-Recommender-System-Using-Machine-Learning
 ```
-|-- data/
-    |-- books.csv                # Book dataset
-    |-- ratings.csv              # User ratings dataset
-|-- models/
-    |-- collaborative_model.pkl  # Trained collaborative filtering model
-    |-- content_based_model.pkl  # Trained content-based model
-|-- recommendation_system.py     # Main script for generating recommendations
-|-- app.py                       # Streamlit app (optional)
-|-- README.md                    # Project documentation
-|-- requirements.txt             # Python dependencies
+### STEP 01- Create a conda environment after opening the repository
+
+```bash
+conda create -n books python=3.7.10 -y
 ```
 
-## Contributing
-Contributions are welcome! Feel free to submit a pull request or open an issue to improve the system.
+```bash
+conda activate books
+```
+
+
+### STEP 02- install the requirements
+```bash
+pip install -r requirements.txt
+```
+
+
+```bash
+#run this file to generate the models
+
+Books Recommender.ipynb
+```
+
+Now run,
+```bash
+streamlit run app.py
+```
+
+
+```bash
+Author: Bappy Ahmed
+Data Scientist
+Email: entbappy73@gmail.com
+
+```
+
+
+
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
